@@ -23,4 +23,5 @@ git push -u origin master (-u makes origin as default repo)  //master is branch
 
 -------- Deploying to production ------------
 
+heroku git:remote -a vays-weather
 heroku create mycode-weather-application
