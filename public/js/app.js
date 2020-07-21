@@ -4,12 +4,13 @@ const output = document.querySelector("#output");
 
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  output.textContent = "loading..";
+  console.log("location");
+  output.textContent = "...";
   const location = search.value;
+  console.log("location", location);
   fetch("/weather?address=" + location).then((response) => {
     response.json().then((data) => {
-      if (!data.error)
-        return (output.textContent = "Temperature in " + data.name + " is " + data.temperature);
+      if (!data.error) return (output.textContent = data.temperature);
       else return (output.textContent = data.error);
     });
   });
