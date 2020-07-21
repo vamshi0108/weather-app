@@ -32,15 +32,15 @@ app.get("", (req, res) => {
 });
 
 app.get("/weather", (req, res) => {
-  geocode(req.query.address, (error, { longitude, latitude } = {}) => {
+  geocode(req.query.address, (error, { longitude, latitude, displayName } = {}) => {
     if (error) {
       return res.send({ error });
     }
-    forecast(latitude, longitude, (forecastError, { name, temperature }) => {
+    forecast(latitude, longitude, (forecastError, { name, temperature } = {}) => {
       if (forecastError) {
         return res.send({ error2 });
       }
-      return res.send({ name, temperature });
+      return res.send({ name, temperature, displayName });
     });
   });
 });

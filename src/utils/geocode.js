@@ -5,7 +5,7 @@ const geocode = (location, callback) => {
     "https://api.mapbox.com/geocoding/v5/mapbox.places/" +
     encodeURIComponent(location) +
     ".json?access_token=pk.eyJ1IjoidmFtc2hpMDEwOCIsImEiOiJja2NocGNyNXMxMTh6MnRwMHM4MGpjMzk5In0.vB4kFjd7bHcok0iRFP50Ww";
-  request({ url, json: true }, (error, {body}) => {
+  request({ url, json: true }, (error, { body }) => {
     if (error) {
       callback("Unable to connect to Weather Services");
     } else if (body.features[0] == null) {
@@ -14,6 +14,7 @@ const geocode = (location, callback) => {
       callback(undefined, {
         longitude: body.features[0].center[0],
         latitude: body.features[0].center[1],
+        displayName: body.features[0].place_name,
       });
     }
   });
