@@ -9,13 +9,17 @@ weatherForm.addEventListener("submit", (e) => {
   const location = search.value;
   fetch("/weather?address=" + location).then((response) => {
     response.json().then((data) => {
-      if (!data.error)
+      if (!data.error) {
+        if (data.displayName.split(",")[1]) {
+          var outputName = data.displayName.split(",")[0] + ", " + data.displayName.split(",")[1];
+        } else {
+          outputName = data.displayName.split(",")[0];
+        }
         return (
-          (output.textContent = data.temperature),
-          (locationName.textContent =
-            data.displayName.split(",")[0] + ", " + data.displayName.split(",")[1])
+          (output.textContent = data.temperature.toString().concat("°C")),
+          (locationName.textContent = outputName)
         );
-      else return (locationName.textContent = data.error);
+      } else return (locationName.textContent = data.error);
     });
   });
 });

@@ -267,7 +267,7 @@ body {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.5;
-  background: #1e202b;
+  /* background: #1e202b; */
 }
 
 h1,
@@ -1578,7 +1578,9 @@ form input[type="reset"] {
  * Header Styles
  */
 .site-header {
-  padding: 50px 0;
+  padding: 30px 0;
+  background: #262936;
+  opacity: 0.95;
 }
 .site-header .branding {
   float: left;
@@ -1605,6 +1607,7 @@ form input[type="reset"] {
 }
 
 .main-navigation {
+  margin-top: 7px;
   float: right;
 }
 .main-navigation .menu-toggle,
@@ -1701,7 +1704,7 @@ form input[type="reset"] {
 }
 
 .hero {
-  background-image: url("/images/banner.png");
+  /*background-image: url("/images/banner.png");*/
   background-size: cover;
   padding: 70px 0;
   min-height: 350px;
@@ -1715,6 +1718,7 @@ form input[type="reset"] {
   width: 100%;
   padding: 20px 50px 20px 20px;
   background: #1e202b;
+  opacity: 0.6;
   color: white;
 }
 .find-location input[type="submit"] {
@@ -1728,6 +1732,7 @@ form input[type="reset"] {
 .forecast-container {
   width: 100%;
   background: #323544;
+  opacity: 0.6;
   display: table;
   table-layout: fixed;
   width: 100%;
@@ -2292,4 +2297,13 @@ form input[type="reset"] {
   height: 40px;
   position: relative;
   cursor: pointer;
+}
+
+.video-background {
+  width: auto;
+  height: auto;
+  position: fixed;
+  left: 0;
+  top: -270px;
+  z-index: -1;
 }
