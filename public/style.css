@@ -1671,6 +1671,7 @@ form input[type="reset"] {
   color: #009ad8;
 }
 
+/* Added for mobile */
 @media screen and (max-width: 990px) {
   .main-navigation .menu .menu-item {
     margin-left: 0px;
@@ -1847,6 +1848,12 @@ form input[type="reset"] {
   font-size: 2.5714285714em;
   font-weight: 300;
   color: white;
+}
+
+@media screen and (max-width: 990px) {
+  .fullwidth-block .section-title {
+    margin-top: 10px;
+  }
 }
 
 .filter {
