@@ -7,7 +7,7 @@ const sendEmail = (data, callback) => {
     secure: false,
     auth: {
       user: "vmshpandu@gmail.com",
-      pass: "9705530295",
+      pass: "Vamshi@0108",
     },
   });
 
