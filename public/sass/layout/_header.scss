@@ -91,27 +91,58 @@
 .mobile-navigation {
   float: right;
 
+  .menu-toggle,
   .menu {
-    background: $secondary-color;
-    list-style: none;
-    text-align: center;
-    border-radius: 10px;
-    overflow: hidden;
+    vertical-align: middle;
+  }
 
-    a {
-      padding: 20px;
-      display: block;
-      color: white;
+  .menu-toggle {
+    background: none;
+    border: 2px solid transparent;
+    color: white;
+    padding: 20px;
+    border-radius: 40px;
+    transition: 0.3s ease;
+    display: none;
+    outline: none;
+    @media screen and (max-width: 990px) {
+      display: inline-block;
+    }
+
+    &:hover,
+    &:active {
+      border-color: $accent-color;
+      color: $accent-color;
+    }
+  }
+
+  .menu {
+    list-style: none;
+    display: inline-block;
+    @include clearfix;
+
+    @media screen and (max-width: 990px) {
+      display: none;
     }
 
     .menu-item {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      &:last-child {
-        border-bottom: none;
+      float: left;
+      margin-left: 10px;
+      a {
+        padding: 5px 25px;
+        border: 2px solid transparent;
+        border-radius: 30px;
+        color: white;
+        transition: 0.3s ease;
+        font-weight: 400;
       }
 
-      &.current-menu-item a {
-        color: $accent-color;
+      &.current-menu-item,
+      &:hover {
+        a {
+          border-color: $accent-color;
+          color: $accent-color;
+        }
       }
     }
   }
