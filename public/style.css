@@ -1625,11 +1625,11 @@ form input[type="reset"] {
   display: none;
   outline: none;
 }
-/* @media screen and (max-width: 990px) {
+@media screen and (max-width: 990px) {
   .main-navigation .menu-toggle {
     display: inline-block;
   }
-} */
+}
 .main-navigation .menu-toggle:hover,
 .main-navigation .menu-toggle:active {
   border-color: #009ad8;
@@ -1647,11 +1647,11 @@ form input[type="reset"] {
   overflow: hidden;
   height: 0;
 }
-/* @media screen and (max-width: 990px) {
+@media screen and (max-width: 990px) {
   .main-navigation .menu {
-    display: none;
+    display: inline-block;
   }
-} */
+}
 .main-navigation .menu .menu-item {
   float: left;
   margin-left: 10px;
