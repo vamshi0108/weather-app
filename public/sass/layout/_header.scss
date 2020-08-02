@@ -88,35 +88,34 @@
   }
 }
 
-// .mobile-navigation{
-// 	padding: 30px 0 0;
-// 	clear: both;
-// 	display: none;
-// 	@media screen and (min-width:991px){display: none!important}
+.mobile-navigation {
+  float: right;
 
-// 	.menu{
-// 		background: $secondary-color;
-// 		list-style: none;
-// 		text-align: center;
-// 		border-radius: 10px;
-// 		overflow: hidden;
+  .menu {
+    background: $secondary-color;
+    list-style: none;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
 
-// 		a{
-// 			padding: 20px;
-// 			display: block;
-// 			color: white;
-// 		}
+    a {
+      padding: 20px;
+      display: block;
+      color: white;
+    }
 
-// 		.menu-item{
-// 			border-bottom: 1px solid rgba(255,255,255,.1);
-// 			&:last-child{border-bottom: none}
+    .menu-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      &:last-child {
+        border-bottom: none;
+      }
 
-// 			&.current-menu-item a{
-// 				color: $accent-color;
-// 			}
-// 		}
-// 	}
-// }
+      &.current-menu-item a {
+        color: $accent-color;
+      }
+    }
+  }
+}
 
 .hero {
   background-size: cover;
