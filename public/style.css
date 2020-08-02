@@ -1674,11 +1674,10 @@ form input[type="reset"] {
 .mobile-navigation {
   padding: 30px 0 0;
   clear: both;
-  display: none;
 }
 @media screen and (min-width: 991px) {
   .mobile-navigation {
-    display: none !important;
+    display: block;
   }
 }
 .mobile-navigation .menu {
