@@ -2096,12 +2096,12 @@ form input[type="reset"] {
   margin-bottom: 30px;
 }
 .photo .photo-preview {
+  width: 50px;
+  height: 50px;
   position: absolute;
-  width: 50%;
-  left: 0;
-  top: 0;
+  right: 520px;
+  top: -20px;
   bottom: 0;
-  background-size: cover;
 }
 .photo .photo-details {
   padding: 20px;
@@ -2150,7 +2150,8 @@ form input[type="reset"] {
 }
 
 .contact-details {
-  background: #262936;
+  background-image: url("/images/map.jpg");
+  /* background: #262936; */
   border-radius: 10px;
   overflow: hidden;
 }
@@ -2159,6 +2160,8 @@ form input[type="reset"] {
   border-top-right-radius: 10px;
 }
 .contact-details .contact-info {
+  background: #262936;
+  opacity: 95%;
   padding: 20px;
 }
 .contact-details address {
@@ -2306,4 +2309,11 @@ form input[type="reset"] {
   left: 0;
   top: -270px;
   z-index: -1;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-transition-delay: 5000s;
 }

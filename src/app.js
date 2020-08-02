@@ -3,12 +3,14 @@ const path = require("path");
 const hbs = require("hbs");
 const geocode = require("./utils/geocode.js");
 const forecast = require("./utils/forecast.js");
+const sendEmail = require("./utils/nodemailer.js");
 const app = express();
 const indexPublicPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
 const port = process.env.PORT || 4242;
-var date = new Date();
+var date = new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
+date = new Date(date);
 var n = date.getDay();
 date = date.toString().split(" ")[2] + " " + date.toString().split(" ")[1];
 var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -36,12 +38,32 @@ app.get("/weather", (req, res) => {
     if (error) {
       return res.send({ error });
     }
-    forecast(latitude, longitude, (forecastError, { name, temperature } = {}) => {
-      if (forecastError) {
-        return res.send({ error2 });
+    forecast(
+      latitude,
+      longitude,
+      (forecastError, { name, temperature, windSpeed, compassDirection, precipitation } = {}) => {
+        if (forecastError) {
+          return res.send({ error2 });
+        }
+        return res.send({
+          name,
+          temperature,
+          displayName,
+          windSpeed,
+          compassDirection,
+          precipitation,
+        });
       }
-      return res.send({ name, temperature, displayName });
-    });
+    );
+  });
+});
+
+app.get("/contactUs", (req, res) => {
+  sendEmail(req.query, (error, response = {}) => {
+    if (error) {
+      return res.send({ error });
+    }
+    return res.send({ response });
   });
 });
 

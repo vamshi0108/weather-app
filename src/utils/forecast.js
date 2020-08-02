@@ -6,7 +6,7 @@ const forecast = (latitude, longitude, callback) => {
     latitude +
     "," +
     longitude;
-  request({ url, json: true }, (error, {body}) => {
+  request({ url, json: true }, (error, { body }) => {
     if (error) {
       callback("Unable to connect to Weather Services");
     } else if (body.location == null) {
@@ -15,6 +15,9 @@ const forecast = (latitude, longitude, callback) => {
       callback(undefined, {
         name: body.location.name,
         temperature: body.current.temperature,
+        windSpeed: body.current.wind_speed,
+        compassDirection: body.current.wind_dir,
+        precipitation: body.current.precip,
       });
     }
   });
