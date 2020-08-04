@@ -1,6 +1,12 @@
-# weather-app
+# Weather-app
 
 Simple web application to track the weather.
+
+### Features
+
+- Current Weather Data
+- Hourly Forecast 7 days
+- Daily Forecast 7 days
 
 ### Prerequisites
 
@@ -16,10 +22,10 @@ git fetch coworker
 git checkout --track coworker/notes
 ```
 
-This will setup a local branch notes, tracking the remote branch coworker/notes. You can easily pull them if any changes made:
+This will setup a local branch notes, tracking the remote branch coworker/notes. You can easily pull them if any changes made. Also make sure you install the node modules in your local setup.
 
 ```
-git checkout notes
+git checkout weather-app
 git pull
 ```
 
@@ -33,10 +39,12 @@ Mapbox
 ## npm Packages Used
 
 ```
-chalk
+nodemailer
 validator
 nodemon
 request
+path
+hbs
 ```
 
 ## Deployment
