@@ -6,13 +6,13 @@ const sendEmail = (data, callback) => {
     port: 587,
     secure: false,
     auth: {
-      user: "vmshpandu@gmail.com",
+      user: "vamshitest9704@gmail.com",
       pass: "Vamshi@0108",
     },
   });
 
   var mailOptions = {
-    from: "vmshpandu@gmail.com",
+    from: "vamshitest9704@gmail.com",
     to: "vamshinagulapally2@gmail.com",
     subject: "Vays Contact | " + data.email + " | " + data.MSISDN,
     text: data.message,
