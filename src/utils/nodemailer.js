@@ -5,6 +5,7 @@ const sendEmail = (data, callback) => {
     host: "smtp.gmail.com",
     port: 587,
     secure: false,
+    requireTLS: true,
     auth: {
       user: "vamshitest9704@gmail.com",
       pass: "Vamshi@0108",
@@ -20,7 +21,7 @@ const sendEmail = (data, callback) => {
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      callback(error);
+      callback(error.message);
     } else {
       callback(undefined, "Thanks for your valuable response");
     }
