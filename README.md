@@ -17,9 +17,7 @@ Git should be installed in your local system
 ### Installing
 
 ```
-git remote add coworker git://vamshi0108/weather-app.git
-git fetch coworker
-git checkout --track coworker/notes
+git clone https://github.com/vamshi0108/weather-app.git
 ```
 
 This will setup a local branch notes, tracking the remote branch coworker/notes. You can easily pull them if any changes made. Also make sure you install the node modules in your local setup.
